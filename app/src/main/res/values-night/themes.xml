@@ -1,7 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.SpinFul" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Base.Theme.SpinFul" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Main Brand Colors -->
+        <item name="colorPrimary">@color/theme_primary_accent_crimson</item>
+        <item name="colorPrimaryVariant">@color/theme_primary_accent_crimson</item>
+        <item name="colorOnPrimary">@color/theme_text_primary_white</item>
+
+        <item name="colorSecondary">@color/theme_secondary_accent_gold</item>
+        <item name="colorSecondaryVariant">@color/theme_secondary_accent_gold</item>
+        <item name="colorOnSecondary">@color/theme_bg_black</item>
+
+        <!-- Backgrounds -->
+        <item name="android:windowBackground">@color/theme_bg_black</item>
+        <item name="colorSurface">@color/theme_cards_dark_gray</item>
+        <item name="colorOnSurface">@color/theme_text_primary_white</item>
+
+        <!-- Text Colors -->
+        <item name="android:textColorPrimary">@color/theme_text_primary_white</item>
+        <item name="android:textColorSecondary">@color/theme_text_secondary_light_gray</item>
     </style>
 </resources>
