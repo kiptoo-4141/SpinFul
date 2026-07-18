@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_background">
+
+    <FrameLayout
+        android:id="@+id/logoContainer"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_bottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_end_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.42">
+
+        <ImageView
+            android:id="@+id/logoOuterRing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/no_bg"
+            android:contentDescription="Outer Ring" />
+
+        <ImageView
+            android:id="@+id/logoInnerWheel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:src="@drawable/no_bg"
+            android:contentDescription="Spokes" />
+
+        <ImageView
+            android:id="@+id/logoCenterS"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:src="@drawable/splash_background"
+            android:contentDescription="Center S" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="SPinFul"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="bold"
+        android:letterSpacing="0.1"
+        android:alpha="0"
+        app:layout_constraintTop_toBottomOf="@id/logoContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_end_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Spin your luck"
+        android:textColor="#B3FFFFFF"
+        android:textSize="14sp"
+        android:letterSpacing="0.15"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_end_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
