@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.kiptoo.spinful.activity.LoginActivity;
+import com.kiptoo.spinful.activity.OnboardingActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -82,7 +82,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                Intent intent = new Intent(SplashActivity.this, OnboardingActivity.class);
                 startActivity(intent);
 
                 // Smooth crossfade out of the splash screen
