@@ -13,6 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.kiptoo.spinful.MainActivity;
 import com.kiptoo.spinful.R;
@@ -35,6 +36,10 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
+        // 🔥 FIX: Initialize FirebaseApp FIRST
+        FirebaseApp.initializeApp(this);
+
+        // Now you can safely get FirebaseAuth instance
         mAuth = FirebaseAuth.getInstance();
 
         etEmail = findViewById(R.id.etEmail);
