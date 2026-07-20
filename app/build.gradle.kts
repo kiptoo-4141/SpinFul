@@ -45,6 +45,11 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
 
+    // Google Sign-In
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
