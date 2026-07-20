@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">SpinFul</string>
     <string name="default_web_client_id">247162802212-8s85qgfqoamceqthr6u7eor0ih6co7qa.apps.googleusercontent.com</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_profile">Profile</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
