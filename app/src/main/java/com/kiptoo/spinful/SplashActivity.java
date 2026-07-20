@@ -7,10 +7,13 @@ import android.os.Looper;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
+import android.content.SharedPreferences;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.kiptoo.spinful.activity.LoginActivity;
 import com.kiptoo.spinful.activity.OnboardingActivity;
 
 public class SplashActivity extends AppCompatActivity {
@@ -18,6 +21,21 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences prefs = getSharedPreferences("SpinfulPrefs", MODE_PRIVATE);
+        boolean isFirstRun = prefs.getBoolean("is_first_run", true);
+
+        if (!isFirstRun) {
+            // Check if logged in
+            if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+            } else {
+                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+            }
+            finish();
+            return; // Skip the splash animation entirely
+        }
+
         setContentView(R.layout.activity_splash);
 
         // Initialize UI Elements
@@ -82,6 +100,11 @@ public class SplashActivity extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
+                SharedPreferences prefs = getSharedPreferences("SpinfulPrefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putBoolean("is_first_run", false);
+                editor.apply();
+
                 Intent intent = new Intent(SplashActivity.this, OnboardingActivity.class);
                 startActivity(intent);
 

@@ -36,9 +36,6 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
-        // 🔥 FIX: Initialize FirebaseApp FIRST
-        FirebaseApp.initializeApp(this);
-
         // Now you can safely get FirebaseAuth instance
         mAuth = FirebaseAuth.getInstance();
 
